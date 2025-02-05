@@ -238,7 +238,7 @@ footer{
     }
 }
 
-@media (min-width: 481px) and (max-width: 1500px){
+@media (min-width: 481px) and (max-width: 2500px){
     .cabecalho {
         padding: 20px;
         background-color: var(--cor-social-btn-hover-bg);
@@ -382,6 +382,7 @@ footer{
     .footer-about {
         position: fixed;
         bottom: 0;
+        border: 1px;
     }
 
 }
