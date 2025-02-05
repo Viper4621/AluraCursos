@@ -49,17 +49,17 @@ main img {
  }
 
 .socials{
-    border: 1px solid red;
     padding: 10px;
     display: flex;
     margin-top: 20px;
-    gap: 15px;
+    gap: 5px;
     width: 250px;
     height: auto;
     justify-content: center;
     color: #F6F6F6;
     flex-direction: column;
     align-items: center;
+    background-color: #3a3b3b;
 }
 
 .socials a:hover{
@@ -77,9 +77,16 @@ main img {
 }
 
 .socials button{
-    width: 90px;
+    width: 130px;
     padding: 5px;
-    background-color: white;
+    background-color: rgb(33, 32, 32);
     border: none;
     border-radius: 30px;
+}
+
+.btn-content{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
