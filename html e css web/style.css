@@ -6,15 +6,24 @@
     font-family: 'Roboto', sans-serif;
 }
 
+:root{
+    --cor-primaria: #F6F6F6;
+    --cor-text-strong-links: #22D4FD;
+    --cor-avatar-border: #22D4FD;
+    --cor-bg-color: #000000;
+    --cor-br-nav-social-footer: #3a3b3b;
+    --cor-social-btn-bg: rgb(33, 32, 32);
+    --cor-social-btn-hover-bg: #80888a;
+}
 /* index.html css */
 body{
     /* height: 100vh; */
-    background-color: #000000;
-    color: #F6F6F6;
+    background-color: var(--cor-bg-color);
+    color: var(--cor-primaria);
 }
 
 strong{
-    color: #22D4FD;
+    color: var(--cor-text-strong-links)
 }
 
 main h1 {
@@ -27,7 +36,7 @@ main h1 {
     width: 150px;
     border-radius: 100%;
     display: flex;
-    border: 5px solid #22D4FD;
+    border: 5px solid var(--cor-avatar-border);
     margin-left: 50px;
 }
 
@@ -59,15 +68,15 @@ main h1 {
     width: 250px;
     height: auto;
     justify-content: center;
-    color: #F6F6F6;
+    color: var(--cor-primaria);
     flex-direction: column;
     align-items: center;
-    background-color: #3a3b3b;
+    background-color: var(--cor-br-nav-social-footer);
     border-radius: 5px;
 }
 
 .socials a:hover{
-    color: #22D4FD;
+    color: var(--cor-text-strong-links);
     text-decoration: underline;
 }
 
@@ -77,13 +86,13 @@ main h1 {
 }
 
 .socials a:visited{
-    color: #22D4FD;
+    color: var(--cor-text-strong-links);
 }
 
 .socials button{
     width: 130px;
     padding: 5px;
-    background-color: rgb(33, 32, 32);
+    background-color: var(--cor-social-btn-bg);
     border: none;
     border-radius: 30px;
     margin-bottom: 10px;
@@ -97,8 +106,7 @@ main h1 {
 }
 
 .socials button:hover{
-    background-color: #80888a;
-    color: #000000;
+    background-color: var(--cor-social-btn-hover-bg);
 }
 
 
@@ -107,15 +115,15 @@ footer{
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    background-color: #3a3b3b;
-    color: #F6F6F6;
+    background-color: var(--cor-br-nav-social-footer);
+    color: var(--cor-primaria);
     height: 30px;
     width: 100%;
 }
 
 .cabecalho{
   padding: 20px;
-  background-color: #3a3b3b;
+  background-color: var(--cor-social-btn-hover-bg);
 }
 
 .cabecalho-menu{
@@ -123,7 +131,7 @@ footer{
     gap: 20px;
 }
 .cabecalho-links{
-    color: #22D4FD;
+    color: var(--cor-text-strong-links);
     text-decoration: none;
 }
 
@@ -152,7 +160,7 @@ footer{
 .img-about{
     width: 250px;
     height: auto;
-    border: 5px solid #80888a;
+    border: 5px solid var(--cor-br-nav-social-footer);
     border-radius: 10px;
 }
 
