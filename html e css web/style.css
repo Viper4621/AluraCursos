@@ -23,9 +23,29 @@ body{
     font-size: 1rem;
 }
 
+/* cabecalho */
+
+.cabecalho{
+    padding: 20px;
+    background-color: var(--cor-social-btn-hover-bg);
+  }
+  
+  .cabecalho-menu{
+      display: flex;
+      gap: 20px;
+  }
+  .cabecalho-links{
+      color: var(--cor-text-strong-links);
+      text-decoration: none;
+  }
+
+
+
 strong{
     color: var(--cor-text-strong-links)
 }
+
+/* Main content */
 
 main h1 {
     text-align: center;
@@ -34,8 +54,8 @@ main h1 {
 
 
 .avatar-img{
-    margin-top: 20px;
-    width: 10%;
+    margin: 20 auto 0;
+    width: 150px;
     border-radius: 100%;
     display: flex;
     border: 5px solid var(--cor-avatar-border);
@@ -112,6 +132,8 @@ main h1 {
 }
 
 
+/* Rodapé */
+
 footer{
     display: flex;
     justify-content: center;
@@ -121,27 +143,15 @@ footer{
     color: var(--cor-primaria);
     height: 30px;
     width: 100%;
-}
-
-.cabecalho{
-  padding: 20px;
-  background-color: var(--cor-social-btn-hover-bg);
-}
-
-.cabecalho-menu{
-    display: flex;
-    gap: 20px;
-}
-.cabecalho-links{
-    color: var(--cor-text-strong-links);
-    text-decoration: none;
+    position: fixed;
+    bottom: 0%;
 }
 
 /* parte sobre mim */
 
 
 .container-about{
-    margin-left: 20%;
+    margin-left: 25%;
     padding-top: 90px;
     display: flex;
     flex-direction: row;
@@ -169,6 +179,209 @@ footer{
 }
 
 .footer-about{
-    position: fixed;
+    position: static;
     bottom: 0;
+}
+
+/* media mobile */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .cabecalho{
+        align-items: center;
+        justify-items: center;
+    }
+    
+    
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15%;
+        margin-left: -8%;
+    }
+  
+    .avatar{
+       margin-left: -50px;    
+    }
+    
+    .footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 0.6rem;
+    }
+
+    .container-about{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: auto;
+        margin-left: 5%;
+        margin-top: -20%;
+    }
+
+    .texto-about{
+        width: 100%;
+    }
+
+    .img-about{
+        margin-top: 5%;
+        margin-left: 30%;
+    }
+
+    .footer-about{
+        font-size: 0.6rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1500px){
+    .cabecalho {
+        padding: 20px;
+        background-color: var(--cor-social-btn-hover-bg);
+    }
+
+    .cabecalho-menu {
+        display: flex;
+        gap: 20px;
+    }
+
+    .cabecalho-links {
+        color: var(--cor-text-strong-links);
+        text-decoration: none;
+    }
+
+    /* Main content */
+    main h1 {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .avatar-img {
+        margin-top: 20px;
+        width: 150px;
+        border-radius: 100%;
+        display: flex;
+        border: 5px solid var(--cor-avatar-border);
+        margin-left: 50px;
+    }
+
+    .container {
+        display: flex;
+        margin-top: 20px;
+        border-radius: 20px;
+        flex-direction: column;
+        padding-left: 20px;
+    }
+
+    .texto {
+        margin-top: 20px;
+        display: flex;
+        width: 250px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: 10px;
+    }
+
+    /* Socials */
+    .socials {
+        padding: 10px;
+        display: flex;
+        margin-top: 20px;
+        gap: 5px;
+        width: 250px;
+        height: auto;
+        justify-content: center;
+        color: var(--cor-primaria);
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--cor-br-nav-social-footer);
+        border-radius: 5px;
+    }
+
+    .socials a:hover {
+        color: var(--cor-text-strong-links);
+        text-decoration: underline;
+    }
+
+    .socials a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .socials a:visited {
+        color: var(--cor-text-strong-links);
+    }
+
+    .socials button {
+        width: 50%;
+        padding: 5px;
+        background-color: var(--cor-social-btn-bg);
+        border: none;
+        border-radius: 30px;
+        margin-bottom: 10px;
+    }
+
+    .btn-content {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .socials button:hover {
+        background-color: var(--cor-social-btn-hover-bg);
+    }
+
+    /* Rodapé */
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        background-color: var(--cor-br-nav-social-footer);
+        color: var(--cor-primaria);
+        height: 30px;
+        width: 100%;
+    }
+
+    /* Parte sobre mim */
+    .container-about {
+        margin-left: 25%;
+        padding-top: 90px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+    }
+
+    .texto-about {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        height: auto;
+    }
+
+    .texto-about p {
+        margin-top: 10px;
+    }
+
+    .img-about {
+        width: 40%;
+        height: auto;
+        border: 5px solid var(--cor-br-nav-social-footer);
+        border-radius: 10px;
+    }
+
+    .footer-about {
+        position: fixed;
+        bottom: 0;
+    }
+
 }
