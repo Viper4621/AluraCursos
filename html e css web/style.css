@@ -6,7 +6,7 @@
 }
 
 body{
-    height: 100vh;
+    /* height: 100vh; */
     background-color: #000000;
     color: #F6F6F6;
 }
@@ -17,6 +17,7 @@ strong{
 
 main h1 {
     text-align: center;
+    margin-top: 25px;
 }
 
 main img {
@@ -60,6 +61,7 @@ main img {
     flex-direction: column;
     align-items: center;
     background-color: #3a3b3b;
+    border-radius: 5px;
 }
 
 .socials a:hover{
@@ -82,6 +84,7 @@ main img {
     background-color: rgb(33, 32, 32);
     border: none;
     border-radius: 30px;
+    margin-bottom: 10px;
 }
 
 .btn-content{
@@ -90,3 +93,35 @@ main img {
     justify-content: center;
     gap: 10px;
 }
+
+.socials button:hover{
+    background-color: #80888a;
+    color: #000000;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #3a3b3b;
+    color: #F6F6F6;
+    height: 30px;
+    width: 100%;
+}
+
+.cabecalho{
+  padding: 20px;
+  background-color: #3a3b3b;
+}
+
+.cabecalho-menu{
+    display: flex;
+    gap: 20px;
+}
+.cabecalho-links{
+    color: #22D4FD;
+    text-decoration: none;
+}
+
