@@ -1,3 +1,4 @@
+/* reset css */
 *{
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* index.html css */
 body{
     /* height: 100vh; */
     background-color: #000000;
@@ -20,7 +22,7 @@ main h1 {
     margin-top: 25px;
 }
 
-main img {
+.avatar-img{
     margin-top: 20px;
     width: 150px;
     border-radius: 100%;
@@ -125,3 +127,36 @@ footer{
     text-decoration: none;
 }
 
+/* parte sobre mim */
+
+
+.container-about{
+    padding-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    
+}
+
+.texto-about{
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+}
+
+.texto-about p {
+    margin-top: 10px;
+}
+
+.img-about{
+    width: 250px;
+    height: auto;
+    border: 5px solid #80888a;
+    border-radius: 10px;
+}
+
+.footer-about{
+    position: fixed;
+    bottom: 0;
+}
