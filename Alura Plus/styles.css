@@ -96,6 +96,7 @@
 }
 
 .container__terciario{
+    margin:  15em;
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
@@ -104,10 +105,71 @@
 
 .terciario__imagem{
     width: 80%;
-    padding:  0 10em;
-    
+    padding: 5em;   
 }
 
-.container__descricao__cursos{
-  padding:  0 7em;
+.dispositivos{
+    text-align: center;
+}
+
+.dispositivos__lista{
+    display: flex; 
+    justify-content: center;
+    list-style-type: none;
+    margin: 5em;
+}
+
+.dispositivos__titulo{
+    font-size: 48px;
+    color: var(--branco-principal);
+}
+
+.lista__item{
+    font-size: 32px;
+    color: var(--branco-principal);
+}
+
+.rodape{
+    margin-top: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 99.1px;
+}
+
+.rodape__logo{
+    width: 5%;
+}
+
+.rodape__lista{
+    margin-top: 40.71px;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 15px;
+}
+
+.lista__link a{
+    text-decoration: none;
+}
+
+.rodape__texto{
+    margin-top: 24px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.rodape__texto__quebra{
+    margin-top: 24px;
+    padding: 0 9em;
+    text-align: center;
+}
+
+a:visited{
+    color: var(--branco-principal);
+}
+
+a:hover{
+    color: var(--botao-azul);
 }
