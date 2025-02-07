@@ -193,8 +193,6 @@ footer{
     
     
     .container{
-        display: flex;
-        flex-direction: column;
         align-items: center;
         text-align: center;
         margin-bottom: 15%;
@@ -218,14 +216,14 @@ footer{
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 90%;
+        width: auto;
         height: auto;
         margin-left: 5%;
         margin-top: -20%;
     }
 
     .texto-about{
-        width: 100%;
+        width: auto;
     }
 
     .img-about{
@@ -238,6 +236,8 @@ footer{
     }
 }
 
+
+/* qualquer tamanho fora */
 @media (min-width: 481px) and (max-width: 2500px){
     .cabecalho {
         padding: 20px;
