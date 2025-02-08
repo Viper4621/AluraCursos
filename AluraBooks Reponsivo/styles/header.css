@@ -36,6 +36,7 @@
 /* combinador css ~ */
 .container__botao:checked ~ .lista-menu{
     display: block;
+    background-color: var(--branco);
 }
 
 .lista-menu__titulo, .lista-menu__item{
@@ -45,6 +46,7 @@
 
 .lista-menu__titulo{
     color: var(--laranja); 
+    font-weight: 700;
 }
 
 /* colocando gradiente na cor da fonte */
@@ -54,4 +56,8 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-transform: uppercase;
+}
+
+.container__botao{
+    display: none;
 }
