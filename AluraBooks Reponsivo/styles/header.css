@@ -30,6 +30,7 @@
     position: absolute;
     top: 100%;
     width: 40vh;
+    
 
 }
 
@@ -105,6 +106,16 @@
     }
 
     .cabecalho__menu-hamburger{
+        display: none;
+    }
+
+    .opcoes__botao:checked~.lista-menu{
+        display: block;
+        width: auto;
+        background-color: var(--branco)
+    }
+
+    .opcoes__botao{
         display: none;
     }
 }
