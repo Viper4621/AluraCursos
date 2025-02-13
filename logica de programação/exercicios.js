@@ -32,15 +32,32 @@ if (diaSemana == "sabado") {
 
 addEventListener;
 
-alert("Boas vindas ao jogo do numero secreto");
-let numeroSecreto = 4;
-let chute = prompt("Digite um numero entre 1 e 10");
-console.log(numeroSecreto);
 
-if (chute == numeroSecreto) {
-  console.log(`Parabens você acertou o numero secreto ${numeroSecreto}`);
-} else {
-  console.log(
-    `Tente novamente você errou seu chute foi ${chute} e o numero secreto era ${numeroSecreto}`
-  );
+let loop = 1;
+
+while (loop <= 10) {
+  console.log(loop);
+  loop++;
+}
+
+console.log("ola");
+alert("ola");
+
+while (loop >= 0) {
+  console.log(loop);
+  loop--;
+}
+
+let contagemRegressiva = prompt("Escolha um numero");
+
+while (contagemRegressiva >= 0) {
+  console.log(contagemRegressiva);
+  contagemRegressiva--;
+}
+
+let contagemProgressiva = 0;
+
+while (contagemProgressiva <= 100) {
+  console.log(contagemProgressiva);
+  contagemProgressiva++;
 }
