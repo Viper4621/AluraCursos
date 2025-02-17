@@ -2,7 +2,15 @@
 <p>Estou criando esse repositorio para cursos em geral da alura</p>
 
 <p>Será dividido em sub pastas dentro do repositorio</p>
-<h2>Imagens</h2>
+
+<h2>Tecnologias</h2>
+<div>
+ <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white">
+ <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
+ <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E">
+</div>
+
+<h3>Imagens</h3>
 
  <p>Alura Books Responsivo</p>
 
