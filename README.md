@@ -28,3 +28,11 @@ Em construção
 
 ![jogo numero secreto att](https://github.com/user-attachments/assets/c78b79f0-b0f3-4dd9-8c2d-1974ebf14fcc)
 
+# <p align="center">JS logica para sorteador de numeros</p> 
+
+![sorteador de numeros](https://github.com/user-attachments/assets/5d9d6513-7080-42c8-88a5-f91c8cd2faab)
+
+# <p align="center">JS logica para alugames com manipulação de dom em 3 elementos</p> 
+
+![alugames](https://github.com/user-attachments/assets/eb13bbab-5b34-404d-8e7f-a452659599b5)
+
