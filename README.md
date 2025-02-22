@@ -36,3 +36,7 @@ Em construção
 
 ![alugames](https://github.com/user-attachments/assets/eb13bbab-5b34-404d-8e7f-a452659599b5)
 
+# <p align="center">JS logica para carrinho de compras com manipulação de dom em e função que verifica preço x quantidade</p> 
+
+![carrinho de compras](https://github.com/user-attachments/assets/46647c1d-e908-402c-a329-ea337e3a95e7)
+
