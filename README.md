@@ -44,3 +44,9 @@ Em construção
 
 ![e-ticket](https://github.com/user-attachments/assets/e3d9d512-825a-425f-8ded-2aa757e1403e)
 
+# <p align="center">JS logica para criar um sorteador de amigo secreto</p> 
+
+![amigoSecreto](https://github.com/user-attachments/assets/cae90ade-1d11-4c3d-ad83-cb094358fcaf)
+
+
+
