@@ -40,3 +40,7 @@ Em construção
 
 ![carrinho de compras](https://github.com/user-attachments/assets/46647c1d-e908-402c-a329-ea337e3a95e7)
 
+# <p align="center">JS logica para compras com manipulação de dom de pagina de tickets x quantidade</p> 
+
+![e-ticket](https://github.com/user-attachments/assets/e3d9d512-825a-425f-8ded-2aa757e1403e)
+
