@@ -17,3 +17,23 @@ console.log(estudante);
 const estudante2 = {};
 estudante2.nome = "Jack Bauer";
 console.log(estudante2);
+
+const objPersonagem = {
+  nome: "Gandalf",
+  classe: "mago",
+  nivel: "20",
+  aliado: {
+    nome: "Saruman",
+    classe: "mago",
+  },
+  status: "desaparecido",
+};
+//novamente 2 formar de acessar alguma propriedade do objeto
+console.log(objPersonagem.aliado);
+console.log(objPersonagem["aliado"]);
+//podemos usar delete para deletar alguma propriedade das duas formas com notação de colchetes tambem funciona
+//delete remove tanto o valor do objeto como as chaves
+delete objPersonagem.aliado;
+delete objPersonagem["aliado"];
+console.log(objPersonagem.aliado);
+//agora virou undefined
