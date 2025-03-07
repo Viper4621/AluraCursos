@@ -37,3 +37,21 @@ delete objPersonagem.aliado;
 delete objPersonagem["aliado"];
 console.log(objPersonagem.aliado);
 //agora virou undefined
+
+const pessoa = {
+  nome: "Bruce Banner",
+  dataNascimento: "25/01/1980",
+  carteiraIdentidade: "997776-X",
+  email: "profbanner@email.com",
+  telefone: "+552877776666",
+  cidade: "Cachoeiro de Itapemirim",
+  estado: "ES",
+};
+//atenção metodo substring só funciona para parametros que estão dentro do nosso objeto ou array se for incluido depois
+//ele não consegue realizar e temos que salvar o novo valor em uma const nova
+pessoa.seguroSocial = ["1234674"];
+pessoa.Cpf = ["987654321"];
+console.log(pessoa);
+//exemplo abaixo
+const telefoneParcial = pessoa.telefone.substring(0, 4);
+console.log(telefoneParcial);
