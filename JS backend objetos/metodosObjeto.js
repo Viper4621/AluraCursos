@@ -24,11 +24,25 @@ const estudante = {
 //oq fazer com array de chaves?
 const chavesObjeto = Object.keys(estudante);
 
-console.log(chavesObjeto);
-//aqui vamos verificar se dentro deste array existe com includes endereços e aplicamos um erro caso não estiver
-if (!chavesObjeto.includes("enderecos")) {
-  console.error("precisa de um endereço");
-}
+// console.log(chavesObjeto);
+// //aqui vamos verificar se dentro deste array existe com includes endereços e aplicamos um erro caso não estiver
+// if (!chavesObjeto.includes("enderecos")) {
+//   console.error("precisa de um endereço");
+// }
 //Object.keys = retorna array
 //Object.value = retorna valores
 //Object.entries = cria um array juntando a chave e o valor
+
+const meuObjeto = { a: 1, b: 2, c: 3 };
+
+const chaves = Object.keys(meuObjeto);
+
+const valores = Object.values(meuObjeto);
+
+const entries = Object.entries(meuObjeto);
+//mostra apenas as chaves
+console.log(chaves);
+//mostra apenas o valor de cada chave
+console.log(valores);
+//mostra chave + valor em strings
+console.log(entries);
