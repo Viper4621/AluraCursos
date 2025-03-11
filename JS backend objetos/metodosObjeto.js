@@ -46,3 +46,10 @@ console.log(chaves);
 console.log(valores);
 //mostra chave + valor em strings
 console.log(entries);
+
+//Object.assign
+const objetoOriginal = { a: 1, b: 2 };
+const objetoParaCopiar = { b: 3, c: 4 };
+//ira reatribuir valor do b de 2 a 3 e incluir o c:4 todos dentro de um novo objeto
+const fusaoObj = Object.assign({}, objetoOriginal, objetoParaCopiar);
+console.log(fusaoObj);
