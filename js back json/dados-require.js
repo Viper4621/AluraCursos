@@ -52,3 +52,21 @@ const novaStringJsonAnimais = JSON.stringify(requireAnimal, null, 2);
 // Imprime no console o objeto JavaScript resultante das operações
 console.log("Objeto JavaScript Resultante das Operações:");
 console.log(requireAnimal);
+
+//copiando objeto JSON
+
+function copiarObjetoJson(objeto) {
+  return JSON.parse(JSON.stringify(objeto));
+}
+
+const pessoaOriginal = {
+  Nome: "ALice",
+  Idade: 13,
+  id: 1,
+};
+
+const pessoaModificada = copiarObjetoJson(pessoaOriginal);
+pessoaModificada.nome = "Erick";
+
+console.log(pessoaOriginal);
+console.log(pessoaModificada.nome);
