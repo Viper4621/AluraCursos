@@ -30,7 +30,10 @@ function quebraEmParagrafos(texto) {
   //aqui estamos criando a função para quebrar linha no split ('\n') <=== detecta quebra de linha para separar
   //aproveitando o problema de maiuscula e minuscula toLowerCase()
   const paragrafos = texto.toLowerCase().split("\n");
-  const contagem = paragrafos.map((paragrafo) => {
+  //Com volumes de dados muito grandes ao inves de criar 2 loops filter/map podemos usar flat
+  //ele é mais performatico que fazer 2 funções
+  const contagem = paragrafos.flatMap((paragrafo) => {
+    if (!paragrafo) return [];
     return verificaPalavrasDuplicadas(paragrafo);
   });
   console.log(contagem);
