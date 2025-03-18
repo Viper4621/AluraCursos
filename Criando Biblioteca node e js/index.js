@@ -16,7 +16,26 @@ const link = caminhoArquivo[2];
 //utf-8 encoding de nossos caracteres para saber como interpretar
 //nos parametros colocamos a const que usamos para salvar o link + formato encoder e passamos 2 função callback erro ou ok=texto
 fs.readFile(link, "utf-8", (erro, texto) => {
-  console.log(texto);
+  verificaPalavrasDuplicadas(texto);
 });
 
 console.log(caminhoArquivo);
+//agora criamos uma function para verificar palavras duplicadas
+//criar um array com as palavras
+//contar as ocorrencias
+//montar um objeto com resultados
+function verificaPalavrasDuplicadas(texto) {
+  //parametro do split separador toda string cada espaço colocar como elemento deixar ele com espaço dentro do array
+  const listaPalavras = texto.split(" ");
+  const resultado = {};
+  //js vai criar propriedade com valor ou se ja existir atribuir novo valor
+  //   objeto[propriedade] = valor;
+  //agora vamos informar que o array criado e para incluir em resultados se não existir e se exitir count+1
+  listaPalavras.forEach((palavra) => {
+    resultado[palavra] = (resultado[palavra] || 0) + 1;
+  });
+  console.log(resultado);
+}
+
+//tratamento de função: o js vai apresentar\n\ = quebra de linha () ele vai msotrar como palavra e tbm vai dar palavras curtas
+//e tambem palavras que tem letra inicial maiuscula e minuscula
