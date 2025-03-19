@@ -1,29 +1,13 @@
-const fs = require("fs");
-const trataErros = require("./erros/funcoesErros");
-
-const caminhoArquivo = process.argv;
-
-const link = caminhoArquivo[2];
-
-fs.readFile(link, "utf-8", (erro, texto) => {
-  try {
-    if (erro) throw erro;
-    contaPalavras(texto);
-  } catch (erro) {
-    trataErros(erro);
-  }
-});
-
-function contaPalavras(texto) {
+export function contaPalavras(texto, caminhoArquivo) {
   const paragrafos = extraiParagrafos(texto);
   const contagem = paragrafos.flatMap((paragrafo) => {
     if (!paragrafo) return [];
     return verificaPalavrasDuplicadas(paragrafo);
   });
   console.log(contagem);
+  //estava dando erro pois consolelog nao estava dentro do export da função
+  console.log(caminhoArquivo);
 }
-
-console.log(caminhoArquivo);
 
 function extraiParagrafos(texto) {
   return texto.toLowerCase().split("\n");
