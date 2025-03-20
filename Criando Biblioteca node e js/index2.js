@@ -1,12 +1,10 @@
-export function contaPalavras(texto, caminhoArquivo) {
+export function contaPalavras(texto) {
   const paragrafos = extraiParagrafos(texto);
   const contagem = paragrafos.flatMap((paragrafo) => {
     if (!paragrafo) return [];
     return verificaPalavrasDuplicadas(paragrafo);
   });
-  console.log(contagem);
-  //estava dando erro pois consolelog nao estava dentro do export da função
-  console.log(caminhoArquivo);
+  return contagem;
 }
 
 function extraiParagrafos(texto) {
