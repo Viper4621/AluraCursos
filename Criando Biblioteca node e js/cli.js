@@ -18,13 +18,31 @@ fs.readFile(link, "utf-8", (erro, texto) => {
   }
 });
 
-async function criaEsalvaArquivo(listaPalavras, endereco) {
+// async function criaEsalvaArquivo(listaPalavras, endereco) {
+//   const arquivoNovo = `${endereco}/resultados.txt`;
+//   const textoPalavras = JSON.stringify(listaPalavras);
+//   try {
+//     await fs.promises.writeFile(arquivoNovo, textoPalavras);
+//     console.log("Arquivo Criado");
+//   } catch (erro) {
+//     throw erro;
+//   }
+// }
+
+//diferenca a syntax async await mais facil // then tem metodo de encadeamento faz o codigo ficar mais longo e menos fluida
+//then e mais antiga
+
+function criaEsalvaArquivo(listaPalavras, endereco) {
   const arquivoNovo = `${endereco}/resultados.txt`;
   const textoPalavras = JSON.stringify(listaPalavras);
-  try {
-    await fs.promises.writeFile(arquivoNovo, textoPalavras);
-    console.log("Arquivo Criado");
-  } catch (erro) {
-    throw erro;
-  }
+
+  fs.promises
+    .writeFile(arquivoNovo, textoPalavras)
+    .then(() => {
+      console.log("arquivo criado com sucesso");
+    })
+    .catch((erro) => {
+      throw erro;
+    })
+    .finally(() => console.log("operação finalizada"));
 }
