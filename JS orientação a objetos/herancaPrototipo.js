@@ -21,6 +21,9 @@ const admin = {
   },
 };
 
+//desta forma o js utiliza objeto com prototipo para herdar propriedades de outro
+//cadeia de prototipo os objetos estao ligados
+// desta forma abaixo o js vai buscar em ambos objetos as funções e trazer num novo
 Object.setPrototypeOf(admin, user);
 admin.criarCurso();
 admin.exibirInfos();
