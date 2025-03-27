@@ -20,3 +20,7 @@ const admin = {
     console.log("Curso criado");
   },
 };
+
+Object.setPrototypeOf(admin, user);
+admin.criarCurso();
+admin.exibirInfos();
