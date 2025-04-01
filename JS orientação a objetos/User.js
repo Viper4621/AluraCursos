@@ -1,5 +1,9 @@
 //criando class eleas utilizam função especial constructor nos parametros tem que colocar todas as propriedades da classe
-class User {
+//export default exportar
+//para trabalhar com exportação temos que usar terminal
+//npm init -y lembrar de caracteres especiais em nome de pasta não aceita o comando
+// dentro do package.json temos que criar geralmente depois de main "type": "module", para conseguir exportar e importar
+export default class User {
   constructor(nome, email, nascimento, role, ativo = true) {
     this.nome = nome;
     this.email = email;
