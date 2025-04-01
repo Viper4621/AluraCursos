@@ -21,4 +21,4 @@ const novoUser = new User("Erick", "cdzbr46211@gmail.com", "06/06/1988");
 //console.log(novoUser);
 //console.log(novoUser.exibirInfos());
 //user e uma classe porem internamente da para ver se o novoUser é uma copia de User ou seja é herança de prototipo serve para TS
-console.log(User.prototype.isPrototypeOf(novoUser));
+//console.log(User.prototype.isPrototypeOf(novoUser));
