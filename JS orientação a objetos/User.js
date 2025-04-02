@@ -16,9 +16,22 @@ export default class User {
     this.#role = role || "estudante";
     this.#ativo = ativo;
   }
-
+  //para criar um metodo privado usamos #no metodo
+  #montaObjUser() {
+    return {
+      nome: this.#nome,
+      email: this.#email,
+      nascimento: this.#nascimento,
+      role: this.#role,
+      ativo: this.#ativo,
+    };
+  }
+  //e precisamos modificar o retorno salvando em uma const os dados para acessar o objeto privado e retornar de acordo
+  //ou seja nao mechemos direto com a class e sim salvamos os resultados dentro de um novo objeto
   exibirInfos() {
-    return `${this.#nome}, ${this.#email}`;
+    const objUser = this.#montaObjUser();
+    return `${objUser.nome}, ${objUser.email}`;
+    // return `${this.#nome}, ${this.#email}`;
   }
 }
 

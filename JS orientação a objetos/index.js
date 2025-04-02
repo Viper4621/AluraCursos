@@ -3,6 +3,7 @@ import Admin from "./admin.js";
 import Docente from "./Docente.js";
 
 const novoUser = new User("Erick", "cdzbr46211@gmail.com", "06/06/1988");
+// console.log(novoUser.exibirInfos());
 console.log(novoUser.exibirInfos());
 
 //propriedade ou metodo ser alterado por fora da classe aqui conseguimos mudar erick para jason

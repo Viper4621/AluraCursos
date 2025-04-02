@@ -13,9 +13,14 @@ export default class Admin extends User {
   criarCurso(nomeCurso, qtdVagas) {
     return `curso: ${nomeCurso} quantidade de vagas: ${qtdVagas}`;
   }
+
+  // exibirNome() {
+  //   return `${this.#nome}`;
+  // }
 }
 
 const novoAdmin = new Admin("Rodrigo", "rod4621@gmail.com", "10/08/1985");
-// console.log(novoAdmin);
-// console.log(novoAdmin.exibirInfos());
-// console.log(novoAdmin.criarCurso("javascript", 20));
+console.log(novoAdmin);
+console.log(novoAdmin.exibirInfos());
+console.log(novoAdmin.exibirNome());
+console.log(novoAdmin.criarCurso("javascript", 20));
