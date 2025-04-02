@@ -4,16 +4,21 @@
 //npm init -y lembrar de caracteres especiais em nome de pasta não aceita o comando
 // dentro do package.json temos que criar geralmente depois de main "type": "module", para conseguir exportar e importar
 export default class User {
+  #nome;
+  #email;
+  #nascimento;
+  #role;
+  #ativo;
   constructor(nome, email, nascimento, role, ativo = true) {
-    this.nome = nome;
-    this.email = email;
-    this.nascimento = nascimento;
-    this.role = role || "estudante";
-    this.ativo = ativo;
+    this.#nome = nome;
+    this.#email = email;
+    this.#nascimento = nascimento;
+    this.#role = role || "estudante";
+    this.#ativo = ativo;
   }
 
   exibirInfos() {
-    return `${this.nome}, ${this.email}`;
+    return `${this.#nome}, ${this.#email}`;
   }
 }
 

@@ -6,12 +6,16 @@ import User from "./User.js";
 //depois de definir os parametros usamos o super()
 //pegar os aprametros que desejamos reutilizar super = da onde iremos herdar como já definimos os this.nome e etc ele ira usar essa logica
 //e nos trazer por herança no caso User
-class Admin extends User {
+export default class Admin extends User {
   constructor(nome, email, nascimento, role = "admin", ativo = "true") {
     super(nome, email, nascimento, role, ativo);
+  }
+  criarCurso(nomeCurso, qtdVagas) {
+    return `curso: ${nomeCurso} quantidade de vagas: ${qtdVagas}`;
   }
 }
 
 const novoAdmin = new Admin("Rodrigo", "rod4621@gmail.com", "10/08/1985");
-console.log(novoAdmin);
-console.log(novoAdmin.exibirInfos());
+// console.log(novoAdmin);
+// console.log(novoAdmin.exibirInfos());
+// console.log(novoAdmin.criarCurso("javascript", 20));
