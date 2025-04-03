@@ -16,6 +16,27 @@ export default class User {
     this.#role = role || "estudante";
     this.#ativo = ativo;
   }
+  //getter para fora da class chama como se fosse propriedade e o codigo interpreta sem mecher na class ou dar acesso
+  //get precisa ser feito para cada propriedade boas praticas de responsabilidade unica
+  get nome() {
+    return this.#nome;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  get nascimento() {
+    return this.#nascimento;
+  }
+
+  get role() {
+    return this.#role;
+  }
+
+  get ativo() {
+    return this.#ativo;
+  }
   //para criar um metodo privado usamos #no metodo
   #montaObjUser() {
     return {
