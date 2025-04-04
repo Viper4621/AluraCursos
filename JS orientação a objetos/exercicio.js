@@ -33,4 +33,4 @@ class User {
 
 const novoUser = new User("Carol", "c@c.com", "12312312312");
 // console.log(novoUser.dados.nome);
-console.log(novoUser.cpf);
+// console.log(novoUser.cpf);

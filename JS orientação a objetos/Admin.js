@@ -10,13 +10,17 @@ export default class Admin extends User {
   constructor(nome, email, nascimento, role = "admin", ativo = "true") {
     super(nome, email, nascimento, role, ativo);
   }
+  exibirInfos() {
+    const infos = super.exibirInfos();
+    return `admin - ${infos}`;
+  }
   criarCurso(nomeCurso, qtdVagas) {
     return `curso: ${nomeCurso} quantidade de vagas: ${qtdVagas}`;
   }
 }
 
-const novoAdmin = new Admin("Rodrigo", "rod4621@gmail.com", "10/08/1985");
-console.log(novoAdmin);
-console.log(novoAdmin.exibirInfos());
-// console.log(novoAdmin.exibirNome());
-console.log(novoAdmin.criarCurso("javascript", 20));
+// const novoAdmin = new Admin("Rodrigo", "rod4621@gmail.com", "10/08/1985");
+// console.log(novoAdmin);
+// console.log(novoAdmin.exibirInfos());
+// // console.log(novoAdmin.exibirNome());
+// console.log(novoAdmin.criarCurso("javascript", 20));
