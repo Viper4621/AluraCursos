@@ -59,10 +59,24 @@ export default class User {
   }
   //e precisamos modificar o retorno salvando em uma const os dados para acessar o objeto privado e retornar de acordo
   //ou seja nao mechemos direto com a class e sim salvamos os resultados dentro de um novo objeto
+  // exibirInfos() {
+  //   // const objUser = this.#montaObjUser();
+  //   // return `${this.nome}, ${this.email}`;
+  //   // return `${this.#nome}, ${this.#email}`;
+  // }
+  //desta forma abaixo conseguimos fazer polimorfismo com condições em uma função metodo esta forma se chama Overload sobrecarga de função
+  //sobrecarga de metodo
+
   exibirInfos() {
-    // const objUser = this.#montaObjUser();
-    return `${this.nome}, ${this.email}`;
-    // return `${this.#nome}, ${this.#email}`;
+    if (this.role === "estudante") {
+      return `dados estudantes: ${this.nome}`;
+    }
+    if (this.role === "admin") {
+      return `dados admin: ${this.nome}, ${this.role}`;
+    }
+    if (this.role === "docente") {
+      return `dados docente: ${this.nome}, ${this.email}`;
+    }
   }
 }
 

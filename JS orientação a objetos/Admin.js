@@ -14,6 +14,7 @@ export default class Admin extends User {
     const infos = super.exibirInfos();
     return `admin - ${infos}`;
   }
+  //asinatura de função o js não consegue trabalhar com 2 funções de mesmo nome para fazer polimorfismo
   criarCurso(nomeCurso, qtdVagas) {
     return `curso: ${nomeCurso} quantidade de vagas: ${qtdVagas}`;
   }
