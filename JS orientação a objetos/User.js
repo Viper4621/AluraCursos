@@ -37,6 +37,16 @@ export default class User {
   get ativo() {
     return this.#ativo;
   }
+  //get e set são metodos acessores
+  //get deixou nossas propriedades privadas para não acessar fora usando apenas.parametro
+  //set aceita um parametro e podemos criar verificações atraves de logicas internas
+  //set === modificar algo por fora da classe
+  set nome(novoNome) {
+    if (novoNome === "") {
+      throw new Error("Formato do nome não é valido");
+    }
+    this.#nome = novoNome;
+  }
   //para criar um metodo privado usamos #no metodo
   #montaObjUser() {
     return {
@@ -50,8 +60,8 @@ export default class User {
   //e precisamos modificar o retorno salvando em uma const os dados para acessar o objeto privado e retornar de acordo
   //ou seja nao mechemos direto com a class e sim salvamos os resultados dentro de um novo objeto
   exibirInfos() {
-    const objUser = this.#montaObjUser();
-    return `${objUser.nome}, ${objUser.email}`;
+    // const objUser = this.#montaObjUser();
+    return `${this.nome}, ${this.email}`;
     // return `${this.#nome}, ${this.#email}`;
   }
 }
