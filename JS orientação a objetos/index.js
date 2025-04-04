@@ -6,11 +6,14 @@ const novoUser = new User("Erick", "cdzbr46211@gmail.com", "06/06/1988");
 console.log(novoUser.exibirInfos());
 // console.log(novoUser.exibirInfos());
 
-const novoAdmin = new Admin("Abreu", "abreu4621@gmail", "10/10/1988");
-console.log(novoAdmin.exibirInfos());
+const dadosFicticios = User.exibirInfosGenericas("auei", "heuheuhe");
+console.log(dadosFicticios);
 
-const novoDocente = new Docente("alguem", "algummail@gmail.com", "05/09/2000");
-console.log(novoDocente.exibirInfos());
+// const novoAdmin = new Admin("Abreu", "abreu4621@gmail", "10/10/1988");
+// console.log(novoAdmin.exibirInfos());
+
+// const novoDocente = new Docente("alguem", "algummail@gmail.com", "05/09/2000");
+// console.log(novoDocente.exibirInfos());
 
 // novoUser.nome = "Jason";
 // console.log(novoUser.nome);

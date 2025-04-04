@@ -78,6 +78,11 @@ export default class User {
       return `dados docente: ${this.nome}, ${this.email}`;
     }
   }
+  //metodos estaticos não depende estancia nova e construtor de class ou seja nao precisa de new e não utiliza o this quando
+  //chamada usar apenas const algumaNome = User.exibirInfosGenericas("","")
+  static exibirInfosGenericas(nome, email) {
+    return `${nome}, ${email}`;
+  }
 }
 
 const novoUser = new User("Erick", "cdzbr46211@gmail.com", "06/06/1988");
