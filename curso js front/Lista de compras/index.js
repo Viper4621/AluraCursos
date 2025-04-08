@@ -36,4 +36,13 @@ botaoAdicionar.addEventListener("click", (evento) => {
   itemDaLista.appendChild(containerItemDaLista);
   // agora pegamos a estrutura li que tem div / checkbox / paragrafo que criamos e colocamos dentro da lista originial do html
   listaDeCompras.appendChild(itemDaLista);
+  //agora vamos criar o metodo para pegar data / new date usamos tolocaleDateString pra formatar
+  //pt-br e quremos mostrar weekday formato longo
+  const diaDaSemana = new Date().toLocaleDateString("pt-br", {
+    weekday: "long",
+  });
+  const data = new Date().toLocaleDateString("pt-br");
+
+  const dataCompleta = `${diaDaSemana} ${data}`;
+  console.log(dataCompleta);
 });
