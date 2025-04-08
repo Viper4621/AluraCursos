@@ -22,4 +22,12 @@ botaoAdicionar.addEventListener("click", (evento) => {
   containerItemDaLista.appendChild(nomeItem);
   itemDaLista.appendChild(containerItemDaLista);
   listaDeCompras.appendChild(itemDaLista);
+
+  const diaDaSemana = new Date().toLocaleDateString("pt-br", {
+    weekday: "long",
+  });
+
+  const data = new Date().toLocaleDateString("pt-br");
+  const dataCompleta = `${diaDaSemana} ${data}`;
+  console.log(dataCompleta);
 });

@@ -34,15 +34,30 @@ botaoAdicionar.addEventListener("click", (evento) => {
   containerItemDaLista.appendChild(nomeItem);
   //agora pegemos a li criada e colocamos a div + checkbox + paragrafo dentro deste li criado
   itemDaLista.appendChild(containerItemDaLista);
+  //temos que colocar o codigo em ordem para funcionar como este item
+  const diaDaSemana = new Date().toLocaleDateString("pt-br", {
+    weekday: "long",
+  });
+  //criamos a data para pegar dia numerico
+  const data = new Date().toLocaleDateString("pt-br");
+  //criamos para pegar o horario com opção de hora e minuto
+  const hora = new Date().toLocaleTimeString("pt-br", {
+    hour: "numeric",
+    minute: "numeric",
+  });
+  //criamos nossa const com todos os 3 dados em template string
+  const dataCompleta = `${diaDaSemana} (${data}) às ${hora}`;
+  //não basta só colocar o valor em variavel temos que criar o elemento
+  const itemData = document.createElement("p");
+  //agora colocamos qual informação vamos alterar
+  itemData.innerText = dataCompleta;
+  //aqui estemos colocando a class para formatar estilo com css
+  itemData.classList.add("texto-data");
+  //temos que incluir ele como filho da lista ul para ficar fora da div
+  itemDaLista.appendChild(itemData);
+
   // agora pegamos a estrutura li que tem div / checkbox / paragrafo que criamos e colocamos dentro da lista originial do html
   listaDeCompras.appendChild(itemDaLista);
   //agora vamos criar o metodo para pegar data / new date usamos tolocaleDateString pra formatar
   //pt-br e quremos mostrar weekday formato longo
-  const diaDaSemana = new Date().toLocaleDateString("pt-br", {
-    weekday: "long",
-  });
-  const data = new Date().toLocaleDateString("pt-br");
-
-  const dataCompleta = `${diaDaSemana} ${data}`;
-  console.log(dataCompleta);
 });
