@@ -27,7 +27,12 @@ botaoAdicionar.addEventListener("click", (evento) => {
     weekday: "long",
   });
 
+  const hora = new Date().toLocaleTimeString("pt-br", {
+    hour: "numeric",
+    minute: "numeric",
+  });
+
   const data = new Date().toLocaleDateString("pt-br");
-  const dataCompleta = `${diaDaSemana} ${data}`;
+  const dataCompleta = `${diaDaSemana} (${data}) às ${hora}`;
   console.log(dataCompleta);
 });
