@@ -23,6 +23,8 @@ botaoAdicionar.addEventListener("click", (evento) => {
   itemDaLista.appendChild(containerItemDaLista);
   listaDeCompras.appendChild(itemDaLista);
 
+  verificarListaVazia();
+
   const diaDaSemana = new Date().toLocaleDateString("pt-br", {
     weekday: "long",
   });
@@ -36,3 +38,16 @@ botaoAdicionar.addEventListener("click", (evento) => {
   const dataCompleta = `${diaDaSemana} (${data}) às ${hora}`;
   console.log(dataCompleta);
 });
+
+const mensagemListaVazia = document.querySelector(".mensagem-lista-vazia");
+
+function verificarListaVazia() {
+  const itemDaLista = listaDeCompras.querySelectorAll("li");
+  if (itemDaLista.length === 0) {
+    mensagemListaVazia.style.display = "block";
+  } else {
+    mensagemListaVazia.style.display = "none";
+  }
+}
+
+verificarListaVazia();
