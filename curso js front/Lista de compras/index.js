@@ -29,6 +29,15 @@ botaoAdicionar.addEventListener("click", (evento) => {
   //por ultimo o paragrafo que vai criar pegando o valor salvo do input
   const nomeItem = document.createElement("p");
   nomeItem.innerText = inputItem.value;
+
+  inputCheckbox.addEventListener("click", () => {
+    if (inputCheckbox.checked) {
+      nomeItem.style.textDecoration = "line-through";
+    } else {
+      nomeItem.textDecoration = "none";
+    }
+  });
+
   //agora vamos colocar o input e o paragrafo dentro da div como filhos
   containerItemDaLista.appendChild(inputCheckbox);
   containerItemDaLista.appendChild(nomeItem);
