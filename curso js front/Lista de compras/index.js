@@ -1,4 +1,5 @@
 import { criarItemDaLista } from "./scripts/criarItemDaLista.js";
+import verificarListaVazia from "./scripts/verificarListaVazia.js";
 //capturando o botao
 const botaoAdicionar = document.getElementById("adicionar-item");
 //capturando lista de compras
@@ -10,20 +11,12 @@ botaoAdicionar.addEventListener("click", (evento) => {
   const itemDaLista = criarItemDaLista();
   // agora pegamos a estrutura li que tem div / checkbox / paragrafo que criamos e colocamos dentro da lista originial do html
   listaDeCompras.appendChild(itemDaLista);
-  verificarListaVazia();
+  verificarListaVazia(listaDeCompras);
 });
 //alteramos para de padrão ter mensagem que lsita esta vazia
 //agora selecionamos o elemento da msg e armazenamos
 const mensagemListaVazia = document.querySelector(".mensagem-lista-vazia");
 //vamos criar função para ver se esta vazia ou não nossa lista
 //agora vamos pedir para selecionar todos li de nossa lista de compras
-function verificarListaVazia() {
-  const itensDaLista = listaDeCompras.querySelectorAll("li");
-  if (itensDaLista.length === 0) {
-    mensagemListaVazia.style.display = "block";
-  } else {
-    mensagemListaVazia.style.display = "none";
-  }
-}
 
-verificarListaVazia();
+verificarListaVazia(listaDeCompras);
