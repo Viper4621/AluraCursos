@@ -84,9 +84,79 @@ form{
     flex-direction: column;
     gap: 24px;
 }
-
+/* label texto encima dos campos do form */
 form div label {
     font-size: 18px;
     font-weight: 400;
     display: block;
+    margin-bottom: 8px;
+}
+
+form div input, textarea{
+    width: 100%;
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    border: none;
+    font-family: var(--font-family);
+    /* line-heigth aumentar tamanho para baixo do campo */
+    line-height: 22.5px;
+}
+
+form div input {
+    height: 39px;
+}
+
+textarea{
+    height: 161px;
+}
+
+.lista-tags li {
+    display: flex;
+    background-color: var(--secondary-color);
+    color: var(--backgrund-color);
+    gap: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.lista-tags{
+    display: flex;
+}
+
+.container-botoes{
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.container-botoes button{
+    width: 50%;
+    padding: 12px 32px 12px 12px;
+    text-align: center;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.botao-descartar{
+    background-color: var(--itens-background);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+
+    position: relative;
+}
+
+.botao-descartar::after{
+    content: "";
+    background-image: url("./img/trash.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
 }
