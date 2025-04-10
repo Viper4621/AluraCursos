@@ -160,3 +160,26 @@ textarea{
     transform: translateY(-50%);
     margin-left: 8px;
 }
+
+.botao-publicar{
+    background-color: var(--primary-color);
+    color: var(--backgrund-color);
+    border: 1px solid var(--primary-color);
+
+    position: relative;
+}
+/* aqui vai ter que usar webkit */
+.botao-publicar::after{
+    content: "";
+    background-image: url("./img/upload.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+}
+
