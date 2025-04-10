@@ -64,3 +64,29 @@ aside{
     padding: 12px 30px;
     border-radius: 8px;
 }
+
+main{
+    background-color: var(--itens-background);
+    border-radius: 10px;
+    padding: 32px;
+    display: flex;
+    gap: 24px;
+}
+
+h2{
+    font-size: 26px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+form div label {
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
