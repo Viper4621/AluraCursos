@@ -84,3 +84,19 @@ inputTags.addEventListener("keypress", async (evento) => {
     }
   }
 });
+
+const botaoPublicar = document.querySelector(".botao-publicar");
+
+//para coletar dados do formulario
+botaoPublicar.addEventListener("click", async (evento) => {
+  evento.preventDefault();
+
+  const nomeDoProjeto = document.getElementById("nome").value;
+  const descricaoDoProjeto = document.getElementById("descricao").value;
+  const tagsProjeto = Array.from(listaTags.querySelectorAll("p")).map(
+    (tag) => tag.textContent
+  );
+  console.log(nomeDoProjeto);
+  console.log(descricaoDoProjeto);
+  console.log(tagsProjeto);
+});
