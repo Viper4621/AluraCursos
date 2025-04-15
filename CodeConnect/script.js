@@ -100,3 +100,17 @@ botaoPublicar.addEventListener("click", async (evento) => {
   console.log(descricaoDoProjeto);
   console.log(tagsProjeto);
 });
+
+async function publicarProjeto(nomeDoProjeto, descricaoDoProjeto, tagsProjeto) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const deuCerto = Math.random() > 0.5;
+
+      if (deuCerto) {
+        resolve("Projeto deu certo");
+      } else {
+        reject("Projeto deu erro");
+      }
+    }, 2000);
+  });
+}
