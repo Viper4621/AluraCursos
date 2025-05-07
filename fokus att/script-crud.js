@@ -17,6 +17,6 @@ formAdicionarTarefa.addEventListener("submit", (evento) => {
   };
   //estmaos jogando essa tarefa dentro de nosso array tarefas
   tarefas.push(tarefa);
-  //estamos criando no local uma chave de acesso que ira armazenar nosso array de tarefas 
-  localStorage.setItem("tarefas", tarefas);
+  //estamos criando no local uma chave de acesso que ira armazenar nosso array de tarefas
+  localStorage.setItem("tarefas", JSON.stringify(tarefas));
 });
