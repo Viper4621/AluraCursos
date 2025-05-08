@@ -21,8 +21,10 @@ function criarElementoTarefa(tarefa) {
   `;
   const paragrafo = document.createElement("p");
   paragrafo.textContent = tarefa.descricao;
+  paragrafo.classList.add("app__section-task-list-item-description");
 
   const botao = document.createElement("button");
+  botao.classList.add("app_button-edit");
   const imagemDoBotao = document.createElement("img");
   imagemDoBotao.setAttribute("src", "/imagens/edit.png");
   //pega o botao e coloca imagem com append
@@ -46,6 +48,8 @@ formAdicionarTarefa.addEventListener("submit", (evento) => {
   };
   //estmaos jogando essa tarefa dentro de nosso array tarefas
   tarefas.push(tarefa);
+  const elementoTarefa = criarElementoTarefa(tarefa);
+  ulTarefas.append(elementoTarefa);
   //estamos criando no local uma chave de acesso que ira armazenar nosso array de tarefas
   localStorage.setItem("tarefas", JSON.stringify(tarefas));
 });
