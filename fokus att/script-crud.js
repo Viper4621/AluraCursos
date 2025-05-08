@@ -2,8 +2,11 @@
 const btnAdicionarTarefa = document.querySelector(".app__button--add-task");
 const formAdicionarTarefa = document.querySelector(".app__form-add-task");
 const textArea = document.querySelector(".app__form-textarea");
+const ulTarefas = document.querySelector(".app__section-task-list");
 
-const tarefas = [];
+//como desejamos salvar o local storage para ter acesso a conteudos mesmo recarregando a pagina temos que modificar igual abaixo
+//e colocar tambem operador de || ou se não ele nao ira funcionar seria como se não existisse array e não deixa criar
+const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 
 function criarElementoTarefa(tarefa) {
   const li = document.createElement("li");
@@ -28,6 +31,8 @@ function criarElementoTarefa(tarefa) {
   li.append(svg);
   li.append(paragrafo);
   li.append(botao);
+  //agora para adicionar o retorno temos retornar essa estrutura
+  return li;
 }
 btnAdicionarTarefa.addEventListener("click", () => {
   formAdicionarTarefa.classList.toggle("hidden");
@@ -43,4 +48,12 @@ formAdicionarTarefa.addEventListener("submit", (evento) => {
   tarefas.push(tarefa);
   //estamos criando no local uma chave de acesso que ira armazenar nosso array de tarefas
   localStorage.setItem("tarefas", JSON.stringify(tarefas));
+});
+
+//agora percorrermos a lista de tarefa e para cada tarefa dentro vamos criar o elemento
+tarefas.forEach((tarefa) => {
+  //depois de percorrer a lista temos que salvar os dados em uma variavel
+  const elementoTarefa = criarElementoTarefa(tarefa);
+  //depois de selecionar em nosso html a class da ul vazia agora podemos colocar nossa variavel com append
+  ulTarefas.append(elementoTarefa);
 });
