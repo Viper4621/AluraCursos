@@ -52,6 +52,8 @@ formAdicionarTarefa.addEventListener("submit", (evento) => {
   ulTarefas.append(elementoTarefa);
   //estamos criando no local uma chave de acesso que ira armazenar nosso array de tarefas
   localStorage.setItem("tarefas", JSON.stringify(tarefas));
+  textArea.value = "";
+  formAdicionarTarefa.classList.add("hidden");
 });
 
 //agora percorrermos a lista de tarefa e para cada tarefa dentro vamos criar o elemento
