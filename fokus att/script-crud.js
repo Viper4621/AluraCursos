@@ -8,6 +8,11 @@ const ulTarefas = document.querySelector(".app__section-task-list");
 //e colocar tambem operador de || ou se não ele nao ira funcionar seria como se não existisse array e não deixa criar
 const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 
+//para nçao deixar codigo fragil vamos criar essa função para colocar nos locais que necessitam de mudanças
+function atualizarTarefas() {
+  localStorage.setItem("tarefas", JSON.stringify(tarefas));
+}
+
 function criarElementoTarefa(tarefa) {
   const li = document.createElement("li");
   li.classList.add("app__section-task-list-item");
@@ -29,6 +34,8 @@ function criarElementoTarefa(tarefa) {
   botao.onclick = () => {
     const novaDescricao = prompt("Qual é o nome da tarefa?");
     paragrafo.textContent = novaDescricao;
+    tarefa.descricao = novaDescricao;
+    atualizarTarefas();
   };
 
   const imagemDoBotao = document.createElement("img");
@@ -57,7 +64,7 @@ formAdicionarTarefa.addEventListener("submit", (evento) => {
   const elementoTarefa = criarElementoTarefa(tarefa);
   ulTarefas.append(elementoTarefa);
   //estamos criando no local uma chave de acesso que ira armazenar nosso array de tarefas
-  localStorage.setItem("tarefas", JSON.stringify(tarefas));
+  atualizarTarefas();
   textArea.value = "";
   formAdicionarTarefa.classList.add("hidden");
 });
