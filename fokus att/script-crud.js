@@ -3,6 +3,9 @@ const btnAdicionarTarefa = document.querySelector(".app__button--add-task");
 const formAdicionarTarefa = document.querySelector(".app__form-add-task");
 const textArea = document.querySelector(".app__form-textarea");
 const ulTarefas = document.querySelector(".app__section-task-list");
+const paragrafoDescricaoTarefa = document.querySelector(
+  ".app__section-active-task-description"
+);
 
 //como desejamos salvar o local storage para ter acesso a conteudos mesmo recarregando a pagina temos que modificar igual abaixo
 //e colocar tambem operador de || ou se não ele nao ira funcionar seria como se não existisse array e não deixa criar
@@ -50,6 +53,9 @@ function criarElementoTarefa(tarefa) {
   li.append(svg);
   li.append(paragrafo);
   li.append(botao);
+  li.onclick = () => {
+    paragrafoDescricaoTarefa.textContent = tarefa.descricao;
+  };
   //agora para adicionar o retorno temos retornar essa estrutura
   return li;
 }
