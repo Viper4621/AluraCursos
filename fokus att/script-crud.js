@@ -33,9 +33,13 @@ function criarElementoTarefa(tarefa) {
 
   botao.onclick = () => {
     const novaDescricao = prompt("Qual é o nome da tarefa?");
-    paragrafo.textContent = novaDescricao;
-    tarefa.descricao = novaDescricao;
-    atualizarTarefas();
+    if (novaDescricao) {
+      paragrafo.textContent = novaDescricao;
+      tarefa.descricao = novaDescricao;
+      atualizarTarefas();
+    } else {
+      alert("O campo de alterar a tarefa não foi digitado");
+    }
   };
 
   const imagemDoBotao = document.createElement("img");
