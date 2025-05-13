@@ -55,26 +55,33 @@ function criarElementoTarefa(tarefa) {
   li.append(svg);
   li.append(paragrafo);
   li.append(botao);
+
+  if (tarefa.completa) {
+    li.classList.add("app__section-task-list-item-complete");
+    botao.setAttribute("disabled", "disabled");
+  } else {
+    li.onclick = () => {
+      document
+        .querySelectorAll(".app__section-task-list-item-active")
+        .forEach((elemento) => {
+          elemento.classList.remove("app__section-task-list-item-active");
+        });
+      if (tarefaSelecionada == tarefa) {
+        paragrafoDescricaoTarefa.textContent = "";
+        tarefaSelecionada = null;
+        liTarefaSelecionada = null;
+        return;
+      }
+      tarefaSelecionada = tarefa;
+      liTarefaSelecionada = li;
+      paragrafoDescricaoTarefa.textContent = tarefa.descricao;
+
+      li.classList.add("app__section-task-list-item-active");
+    };
+  }
+
   //atualizamos com if para que quando selecionar uma tarefa limpe a descrição de paragrafo antiga e desmaque a anterior
   //antes ele selecionava todas no click e não tirava a seleção agr so deixa 1 selecionada e se clicar denovo tira seleção
-  li.onclick = () => {
-    document
-      .querySelectorAll(".app__section-task-list-item-active")
-      .forEach((elemento) => {
-        elemento.classList.remove("app__section-task-list-item-active");
-      });
-    if (tarefaSelecionada == tarefa) {
-      paragrafoDescricaoTarefa.textContent = "";
-      tarefaSelecionada = null;
-      liTarefaSelecionada = null;
-      return;
-    }
-    tarefaSelecionada = tarefa;
-    liTarefaSelecionada = li;
-    paragrafoDescricaoTarefa.textContent = tarefa.descricao;
-
-    li.classList.add("app__section-task-list-item-active");
-  };
   //agora para adicionar o retorno temos retornar essa estrutura
   return li;
 }
@@ -113,5 +120,7 @@ document.addEventListener("FocoFinalizado", () => {
     liTarefaSelecionada
       .querySelector("button")
       .setAttribute("disabled", "disabled");
+    tarefaSelecionada.completa = true;
+    atualizarTarefas();
   }
 });
