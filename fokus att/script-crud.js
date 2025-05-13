@@ -8,6 +8,7 @@ const paragrafoDescricaoTarefa = document.querySelector(
 );
 
 const btnRemoverConcluidas = document.querySelector("#btn-remover-concluidas");
+const btnRemoverTodas = document.querySelector("#btn-remover-todas");
 
 //como desejamos salvar o local storage para ter acesso a conteudos mesmo recarregando a pagina temos que modificar igual abaixo
 //e colocar tambem operador de || ou se não ele nao ira funcionar seria como se não existisse array e não deixa criar
@@ -129,12 +130,19 @@ document.addEventListener("FocoFinalizado", () => {
 //criamos nova função de click para pegar todos os elementos completos salvar em uma variavel
 //nesta variavel vamos criar um array para remover o elemento
 //vamos filtrar as tarefas para remover apenas as completas e chamamos nosso metodo atualizarTarefas
-
-btnRemoverConcluidas.onclick = () => {
-  const seletor = ".app__section-task-list-item-complete";
+//tambem temos um operador ternario para aplicar somente em completas se tiver complete ok se nao deixa a class inicial
+const removerTarefas = (somenteCompletas) => {
+  const seletor = somenteCompletas
+    ? ".app__section-task-list-item-complete"
+    : ".app__section-task-list-item";
   document.querySelectorAll(seletor).forEach((elemento) => {
     elemento.remove();
   });
-  tarefas = tarefas.filter((tarefa) => !tarefa.completa);
+  tarefas = somenteCompletas
+    ? tarefas.filter((tarefa) => !tarefa.completa)
+    : [];
   atualizarTarefas();
 };
+//estamos passando por referencia o removerTarefas por isso nao usamos () ao final
+btnRemoverConcluidas.onclick = () => removerTarefas(true);
+btnRemoverTodas.onclick = () => removerTarefas(false);
