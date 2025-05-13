@@ -55,6 +55,7 @@ function criarElementoTarefa(tarefa) {
   li.append(botao);
   li.onclick = () => {
     paragrafoDescricaoTarefa.textContent = tarefa.descricao;
+    li.classList.add("app__section-task-list-item-active");
   };
   //agora para adicionar o retorno temos retornar essa estrutura
   return li;
