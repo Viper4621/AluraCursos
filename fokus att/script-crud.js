@@ -11,6 +11,7 @@ const paragrafoDescricaoTarefa = document.querySelector(
 //e colocar tambem operador de || ou se não ele nao ira funcionar seria como se não existisse array e não deixa criar
 const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 let tarefaSelecionada = null;
+let liTarefaSelecionada = null;
 
 //para nçao deixar codigo fragil vamos criar essa função para colocar nos locais que necessitam de mudanças
 function atualizarTarefas() {
@@ -65,9 +66,11 @@ function criarElementoTarefa(tarefa) {
     if (tarefaSelecionada == tarefa) {
       paragrafoDescricaoTarefa.textContent = "";
       tarefaSelecionada = null;
+      liTarefaSelecionada = null;
       return;
     }
     tarefaSelecionada = tarefa;
+    liTarefaSelecionada = li;
     paragrafoDescricaoTarefa.textContent = tarefa.descricao;
 
     li.classList.add("app__section-task-list-item-active");
@@ -101,4 +104,14 @@ tarefas.forEach((tarefa) => {
   const elementoTarefa = criarElementoTarefa(tarefa);
   //depois de selecionar em nosso html a class da ul vazia agora podemos colocar nossa variavel com append
   ulTarefas.append(elementoTarefa);
+});
+
+document.addEventListener("FocoFinalizado", () => {
+  if (tarefaSelecionada && liTarefaSelecionada) {
+    liTarefaSelecionada.classList.remove("app__section-task-list-item-active");
+    liTarefaSelecionada.classList.add("app__section-task-list-item-complete");
+    liTarefaSelecionada
+      .querySelector("button")
+      .setAttribute("disabled", "disabled");
+  }
 });
