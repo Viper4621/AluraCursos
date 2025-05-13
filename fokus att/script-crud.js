@@ -10,6 +10,7 @@ const paragrafoDescricaoTarefa = document.querySelector(
 //como desejamos salvar o local storage para ter acesso a conteudos mesmo recarregando a pagina temos que modificar igual abaixo
 //e colocar tambem operador de || ou se não ele nao ira funcionar seria como se não existisse array e não deixa criar
 const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+let tarefaSelecionada = null;
 
 //para nçao deixar codigo fragil vamos criar essa função para colocar nos locais que necessitam de mudanças
 function atualizarTarefas() {
@@ -53,8 +54,22 @@ function criarElementoTarefa(tarefa) {
   li.append(svg);
   li.append(paragrafo);
   li.append(botao);
+  //atualizamos com if para que quando selecionar uma tarefa limpe a descrição de paragrafo antiga e desmaque a anterior
+  //antes ele selecionava todas no click e não tirava a seleção agr so deixa 1 selecionada e se clicar denovo tira seleção
   li.onclick = () => {
+    document
+      .querySelectorAll(".app__section-task-list-item-active")
+      .forEach((elemento) => {
+        elemento.classList.remove("app__section-task-list-item-active");
+      });
+    if (tarefaSelecionada == tarefa) {
+      paragrafoDescricaoTarefa.textContent = "";
+      tarefaSelecionada = null;
+      return;
+    }
+    tarefaSelecionada = tarefa;
     paragrafoDescricaoTarefa.textContent = tarefa.descricao;
+
     li.classList.add("app__section-task-list-item-active");
   };
   //agora para adicionar o retorno temos retornar essa estrutura
