@@ -7,9 +7,11 @@ const paragrafoDescricaoTarefa = document.querySelector(
   ".app__section-active-task-description"
 );
 
+const btnRemoverConcluidas = document.querySelector("#btn-remover-concluidas");
+
 //como desejamos salvar o local storage para ter acesso a conteudos mesmo recarregando a pagina temos que modificar igual abaixo
 //e colocar tambem operador de || ou se não ele nao ira funcionar seria como se não existisse array e não deixa criar
-const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 let tarefaSelecionada = null;
 let liTarefaSelecionada = null;
 
@@ -124,3 +126,15 @@ document.addEventListener("FocoFinalizado", () => {
     atualizarTarefas();
   }
 });
+//criamos nova função de click para pegar todos os elementos completos salvar em uma variavel
+//nesta variavel vamos criar um array para remover o elemento
+//vamos filtrar as tarefas para remover apenas as completas e chamamos nosso metodo atualizarTarefas
+
+btnRemoverConcluidas.onclick = () => {
+  const seletor = ".app__section-task-list-item-complete";
+  document.querySelectorAll(seletor).forEach((elemento) => {
+    elemento.remove();
+  });
+  tarefas = tarefas.filter((tarefa) => !tarefa.completa);
+  atualizarTarefas();
+};
