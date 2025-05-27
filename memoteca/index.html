@@ -31,15 +31,8 @@
         <form id="pensamento-form">
           <input type="hidden" id="pensamento-id" />
           <label for="pensamento-conteudo">Pensamento</label>
-          <textarea 
-            id="pensamento-conteudo" 
-            placeholder="Digite seu pensamento" 
-            required>
-          </textarea>
-          <label 
-            for="pensamento-autoria">
-              Autoria ou Fonte
-            </label>
+          <textarea id="pensamento-conteudo" placeholder="Digite seu pensamento" required></textarea>
+          <label for="pensamento-autoria">Autoria ou Fonte</label>
           <input 
             type="text" 
             id="pensamento-autoria" 
@@ -49,7 +42,7 @@
             <button 
               type="submit" 
               id="botao-salvar">
-              Adicionar
+              Salvar
             </button>
             <button 
               type="button" 
@@ -62,6 +55,10 @@
       <span></span>
       <section id="lista-pensamentos-container">
         <h3>Meu Mural</h3>
+        <div id="mensagem-vazia" class="mensagem-vazia">
+          <img src="assets/imagens/lista-vazia.png" alt="Nenhum pensamento disponível">
+          <p>Nada por aqui ainda, que tal compartilhar alguma ideia?</p>
+        </div>
         <ul id="lista-pensamentos"></ul>
       </section>
     </main>
@@ -70,5 +67,8 @@
         2024 Desenvolvido por Alura. 
         Projeto fictício sem fins comerciais.</p>
     </footer>
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/ui.js"></script>
   </body>
 </html>
